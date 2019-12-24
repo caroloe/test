@@ -11,6 +11,7 @@ use think\Db;
 class CardController extends Base
 {
     public function index(){
+        //列表
         $res = Db::name('card')->select();
         return $this->output_success(10010,$res,'获取储值卡列表成功');
     }
@@ -19,8 +20,8 @@ class CardController extends Base
     //新增储值卡
     public function create(){
 //        $price = input('price',100,'intval');
-        $money = input('money',100,'intval');
-        $name  = input('name','五折','trim');
+        $money = input('money',0,'intval');
+        $name  = input('name','','trim');
 
         if($name == ''){
             return $this->output_error(10010,'储值卡名不能为空');
