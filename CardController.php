@@ -11,7 +11,7 @@ use think\Db;
 class CardController extends Base
 {
     public function index(){
-        //列表
+        //列表dev
         $res = Db::name('card')->select();
         return $this->output_success(10010,$res,'获取储值卡列表成功');
     }
